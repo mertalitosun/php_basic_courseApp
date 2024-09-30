@@ -12,9 +12,10 @@
             </div>
             <div class="col-12 col-md-9">
                 <?php foreach($kurslar as $kurs):?>
-                    <?php if($kurs["onay"] and $kurs["anasayfa"]):?>
+                    <?php if($kurs["onay"]):?>
                         <?php include("partials/_kurs.php")?> <!-- kurs -->
                     <?php endif?>
+                    
                 <?php endforeach;?>
             </div>
         </div>
