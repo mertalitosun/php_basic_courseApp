@@ -37,7 +37,7 @@
     
     <nav class="navbar navbar-expand-lg bg-primary navbar dark">
         <div class="container">
-            <a href="/" class="navbar-brand">Course App</a>
+            <a href="/courseApp" class="navbar-brand">Course App</a>
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a href="#" class="nav-link">Anasayfa</a>
@@ -60,19 +60,21 @@
             </div>
             <div class="col-12 col-md-9">
                 <?php foreach($kurslar as $kurs):?>
-                    <div class="card mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="img/<?php echo$kurs["resim"]?>" alt="" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="cart-title"><?php echo $kurs["baslik"]?></h5>
-                                <p><?php echo $kurs["aciklama"]?></p>
-                            </div>
+                    <?php if($kurs["onay"]):?>
+                        <div class="card mb-3">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="img/<?php echo$kurs["resim"]?>" alt="" class="img-fluid rounded-start">
+                                </div>
+                                <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="cart-title"><?php echo $kurs["baslik"]?></h5>
+                                    <p><?php echo $kurs["aciklama"]?></p>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif?>
                 <?php endforeach;?>
             </div>
         </div>
