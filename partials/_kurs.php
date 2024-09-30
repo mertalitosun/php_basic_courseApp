@@ -5,7 +5,11 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="cart-title"><?php echo $kurs["baslik"] ?></h5>
+                <h5 class="cart-title">
+                    <a href="kurs-detay.php?id=<?php echo $kurs["id"];?>">
+                        <?php echo $kurs["baslik"] ?>
+                    </a>
+                </h5>
                 <p><?php echo $kurs["aciklama"] ?></p>
             </div>
         </div>
