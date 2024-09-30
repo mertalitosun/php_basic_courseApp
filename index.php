@@ -1,4 +1,4 @@
-<?php include("partials/_db.php")?> <!-- db -->
+<?php require_once("config.php")?> <!-- db -->
 
 <!DOCTYPE html>
 <html lang="en">
