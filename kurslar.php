@@ -1,4 +1,13 @@
 <?php require_once("config.php")?> <!-- db -->
+<?php
+    $result_kategoriler = mysqli_query($baglanti,"SELECT * From kategoriler");
+    $kategoriler = mysqli_fetch_all($result_kategoriler, MYSQLI_ASSOC);
+
+    $result_kurslar = mysqli_query($baglanti,"SELECT * From kurslar");
+    $kurslar = mysqli_fetch_all($result_kurslar, MYSQLI_ASSOC);
+
+    mysqli_close($baglanti);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include("partials/_header.php")?> <!-- header -->
@@ -7,7 +16,7 @@
     <div class="container my-3">
         <div class="row">
             <div class="col-12 col-md-3">
-                <?php include("partials/_menu.php")?> <!-- menü -->
+                <?php include("partials/_kategoriler.php")?> <!-- menü -->
             </div>
             <div class="col-12 col-md-9">
                 <?php foreach($kurslar as $kurs):?>
