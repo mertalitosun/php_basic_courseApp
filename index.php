@@ -1,3 +1,30 @@
+<?php
+
+    $kategoriler = ["Programlama", "Web Geliştirme", "Mobil Programlama", "Ofis Uygulamalar"];
+    $kurslar = [
+        [
+            "id" => 1,
+            "baslik" => "Web Geliştirme Kursu",
+            "aciklama" => "Güzel bir kurs",
+            "resim" => "1.jpg",
+            "onay" => true
+        ],
+        [
+            "id" => 2,
+            "baslik" => "Python Kursu",
+            "aciklama" => "Güzel bir kurs",
+            "resim" => "2.jpg",
+            "onay" => true
+        ],
+        [
+            "id" => 1,
+            "baslik" => "Javascript Kursu",
+            "aciklama" => "Güzel bir kurs",
+            "resim" => "3.jpg",
+            "onay" => false
+        ],
+    ]; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,57 +48,32 @@
             </ul>
         </div>
     </nav>
+
     <div class="container my-3">
         <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <div class="list-group">
-                    <a href="" class="list-group-item list-group-item-action">Programlama</a>
-                    <a href="" class="list-group-item list-group-item-action">Web Geliştirme</a>
-                    <a href="" class="list-group-item list-group-item-action">Mobil Uygulama</a>
+                    <?php foreach($kategoriler as $kategori): ?>
+                        <a href="" class="list-group-item list-group-item-action"><?php echo $kategori;?></a>
+                    <?php endforeach; ?>
                 </div>
             </div>
-            <div class="col-9">
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="img/1.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="cart-title">Web Geliştirme</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic odio, nostrum quas accusamus quod odit numquam illum iste dolor facere voluptatem repudiandae tenetur fuga, nisi sit quisquam a corporis!</p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="img/2.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
+            <div class="col-12 col-md-9">
+                <?php foreach($kurslar as $kurs):?>
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/<?php echo$kurs["resim"]?>" alt="" class="img-fluid rounded-start">
+                            </div>
+                            <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="cart-title">Python Kursu</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic odio, nostrum quas accusamus quod odit numquam illum iste dolor facere voluptatem repudiandae tenetur fuga, nisi sit quisquam a corporis!</p>
+                                <h5 class="cart-title"><?php echo $kurs["baslik"]?></h5>
+                                <p><?php echo $kurs["aciklama"]?></p>
+                            </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="img/3.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="cart-title">Javascript Kursu</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic odio, nostrum quas accusamus quod odit numquam illum iste dolor facere voluptatem repudiandae tenetur fuga, nisi sit quisquam a corporis!</p>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
     </div>
